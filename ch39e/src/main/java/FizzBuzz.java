@@ -13,14 +13,10 @@ public class FizzBuzz {
     }
 
     private static void printFizzOrBuzz(int n){
-        String whatIs;
-        if(n%3==0 && n%5==0){
-            whatIs = "FizzBuzz";
-        }else if(n%3==0){
-            whatIs = "Fizz";
-        }else if(n%5==0){
-            whatIs = "Buzz";
-        }else whatIs = String.valueOf(n);
+        String whatIs = "";
+        if(n%3==0) whatIs += "Fizz";
+        if(n%5==0) whatIs += "Buzz";
+        if (whatIs.length()==0) whatIs+=n;
         System.out.println(whatIs);
     }
 }
