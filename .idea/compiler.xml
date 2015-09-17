@@ -22,13 +22,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="ch214i" />
         <module name="ch228e" />
         <module name="ch230e" />
+        <module name="ch232e" />
         <module name="ch39e" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="ch214i" target="1.8" />
       <module name="ch228e" target="1.8" />
+      <module name="ch232e" target="1.8" />
       <module name="ch39e" target="1.8" />
       <module name="rdailyprogrammer" target="1.8" />
     </bytecodeTargetLevel>
