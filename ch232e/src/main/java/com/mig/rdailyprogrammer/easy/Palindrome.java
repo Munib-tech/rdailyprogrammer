@@ -17,24 +17,26 @@ public class Palindrome {
             stringToTest.append(input.nextLine());
         }
 
-        boolean theStringIsPalindrome = isPalindrome(stringToTest);
-        if(theStringIsPalindrome){
-            System.out.println("Palindrome");
-        }else{
-            System.out.println("Not a palindrome");
-        }
+        Palindrome palindrome = new Palindrome();
+        System.out.println(palindrome.isPalindromeTextual(stringToTest));
     }
 
-
-
-    public static boolean isPalindrome(StringBuilder str){
+    public String isPalindromeTextual(StringBuilder str){
+        boolean theStringIsPalindrome = isPalindrome(str);
+        if(theStringIsPalindrome){
+            return "Palindrome";
+        }else{
+            return "Not a palindrome";
+        }
+    }
+    public boolean isPalindrome(StringBuilder str){
         String onlyWordChars = removeNotWordChars(str.toString());
         String reversedAndOnlyWordChars = removeNotWordChars(str.reverse().toString());
 
         return reversedAndOnlyWordChars.equalsIgnoreCase(onlyWordChars);
     }
 
-    public static String removeNotWordChars(String str){
+    public String removeNotWordChars(String str){
         return str.replaceAll("[^\\w]", "");
     }
 

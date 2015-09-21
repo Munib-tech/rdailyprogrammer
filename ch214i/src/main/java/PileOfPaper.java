@@ -30,7 +30,6 @@ public class PileOfPaper {
                 coords[i][j].setColor(color);
             }
         }
-        System.out.println("*********************************");
         return coords;
     }
 
@@ -47,12 +46,7 @@ public class PileOfPaper {
         }
 
         //print map
-        Iterator it = areasByColor.entrySet().iterator();
-        while(it.hasNext()){
-            Map.Entry pair = (Map.Entry)it.next();
-            System.out.println(pair.getKey()+" "+pair.getValue());
-            it.remove();
-        }
+        areasByColor.forEach((k,v)-> System.out.println(k+" "+v));
     }
     public static void display(Sheet[][] coords){
         for (Sheet[] coord : coords) {

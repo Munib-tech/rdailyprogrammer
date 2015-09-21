@@ -1,5 +1,6 @@
 package com.mig.rdailyprogrammer.easy;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -9,6 +10,12 @@ import static org.junit.Assert.*;
  * Created by mramos on 9/17/2015.
  */
 public class PalindromeTest {
+
+    private Palindrome palindrome;
+    @Before
+    public void setup(){
+        palindrome = new Palindrome();
+    }
 
     @Test
     public void testIsPalindrome() throws Exception {
@@ -42,7 +49,16 @@ public class PalindromeTest {
                 "Evil is a deed as I live.\n" +
                 "Dammit I’m mad.");
 
-        assertThat(Palindrome.isPalindrome(paliondromePoem), is(true));
+        assertThat(palindrome.isPalindrome(paliondromePoem), is(true));
+    }
+
+    @Test
+    public void isPalindromeTextual(){
+        StringBuilder palindromeStr = new StringBuilder("1001");
+        StringBuilder notPalindromeStr = new StringBuilder("100x");
+
+        assertThat(palindrome.isPalindromeTextual(palindromeStr), is("Palindrome"));
+        assertThat(palindrome.isPalindromeTextual(notPalindromeStr), is("Not a palindrome"));
     }
 
     @Test
@@ -50,7 +66,6 @@ public class PalindromeTest {
         String str = "huehue\n hola?";
         String onlyWordChars = "huehuehola";
 
-        assertThat(Palindrome.removeNotWordChars(str), is(onlyWordChars));
-
+        assertThat(palindrome.removeNotWordChars(str), is(onlyWordChars));
     }
 }
